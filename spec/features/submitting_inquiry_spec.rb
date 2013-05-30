@@ -9,13 +9,13 @@ feature "Contact CatHub staff" do
 # I must specify a last name
   scenario "submitting a form with all fields filled in" do
     expected_inquiry_count = Inquiry.count + 1
-    visit '/inquiries/new'
-    fill_in 'email', with: 'foo@bar.com'
-    fill_in 'subject', with: 'Halp!'
-    fill_in 'description', with: 'How is babby formed?'
-    fill_in 'first name', with: 'Timmy'
-    fill_in 'last name', with: 'Tables'
-    click_button 'Submit'
+    visit new_inquiry_path
+    fill_in 'Email', with: 'foo@bar.com'
+    fill_in 'Subject', with: 'Halp!'
+    fill_in 'Description', with: 'How is babby formed?'
+    fill_in 'First name', with: 'Timmy'
+    fill_in 'Last name', with: 'Tables'
+    click_button 'Create Inquiry'
     expect(Inquiry.count).to eql(expected_inquiry_count)
   end
 end

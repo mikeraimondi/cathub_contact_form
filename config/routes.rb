@@ -1,7 +1,6 @@
 CathubContactForm::Application.routes.draw do
-  get "inquiries/index"
 
-  get "inquiries/new"
+  resources :inquiries
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
