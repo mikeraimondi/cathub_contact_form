@@ -1,5 +1,5 @@
 class Inquiry < ActiveRecord::Base
-  validates_presence_of :email
+  validates_presence_of :email, message: 'blah'
   validates_presence_of :subject
   validates_presence_of :description
   validates_presence_of :first_name
